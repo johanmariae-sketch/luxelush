@@ -1,15 +1,69 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Search, ShoppingBag, Menu, X } from "lucide-react";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import { Search, Menu, X } from "lucide-react";
 import { BRAND, NAV_LINKS } from "@/lib/constants";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { products } from "@/data/products";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [query, setQuery] = useState("");
   const pathname = usePathname();
+  const router = useRouter();
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+
+  const filtered = query.trim()
+    ? products.filter((p) =>
+        p.name.toLowerCase().includes(query.toLowerCase())
+      )
+    : [];
+
+  useEffect(() => {
+    if (searchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [searchOpen]);
+
+  // Close search on click outside
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        searchContainerRef.current &&
+        !searchContainerRef.current.contains(e.target as Node)
+      ) {
+        setSearchOpen(false);
+        setQuery("");
+      }
+    }
+    if (searchOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [searchOpen]);
+
+  // Close search on Escape
+  useEffect(() => {
+    function handleEsc(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setSearchOpen(false);
+        setQuery("");
+      }
+    }
+    document.addEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleEsc);
+  }, []);
+
+  function handleResultClick(slug: string) {
+    setSearchOpen(false);
+    setQuery("");
+    router.push(`/catalogo?buscar=${slug}`);
+  }
 
   return (
     <header className="w-full z-50 relative">
@@ -62,29 +116,102 @@ export default function Navbar() {
             </div>
 
             {/* Center: Logo */}
-            <Link href="/" className="flex items-center gap-2 absolute left-1/2 -translate-x-1/2 lg:relative lg:left-auto lg:translate-x-0">
+            <Link
+              href="/"
+              className="flex items-center gap-2 absolute left-1/2 -translate-x-1/2 lg:relative lg:left-auto lg:translate-x-0"
+            >
               <span className="font-heading text-2xl sm:text-3xl font-semibold tracking-wide text-brand-black">
                 LUXELUSH
               </span>
             </Link>
 
             {/* Right: Icons */}
-            <div className="flex items-center gap-3">
-              <button
-                className="p-2 text-neutral-600 hover:text-brand-black transition-colors"
-                aria-label="Buscar"
-              >
-                <Search size={20} />
-              </button>
-              <a
-                href={buildWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-neutral-600 hover:text-brand-gold-500 transition-colors"
-                aria-label="WhatsApp"
-              >
-                <ShoppingBag size={20} />
-              </a>
+            <div className="flex items-center gap-3" ref={searchContainerRef}>
+              {/* Search */}
+              <div className="relative">
+                <button
+                  onClick={() => {
+                    setSearchOpen(!searchOpen);
+                    if (searchOpen) setQuery("");
+                  }}
+                  className="p-2 text-neutral-600 hover:text-brand-black transition-colors"
+                  aria-label="Buscar"
+                >
+                  {searchOpen ? <X size={20} /> : <Search size={20} />}
+                </button>
+
+                {/* Search Dropdown — full-width on mobile, dropdown on desktop */}
+                {searchOpen && (
+                  <div className="fixed inset-x-0 top-[calc(var(--nav-top,0px))] sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-2 sm:w-96 bg-white sm:rounded-2xl shadow-2xl border-b sm:border border-neutral-100 overflow-hidden z-50">
+                    <div className="p-4 border-b border-neutral-100">
+                      <div className="flex items-center gap-3 bg-neutral-50 rounded-full px-4 py-2.5">
+                        <Search size={16} className="text-neutral-400 shrink-0" />
+                        <input
+                          ref={searchInputRef}
+                          type="text"
+                          value={query}
+                          onChange={(e) => setQuery(e.target.value)}
+                          placeholder="Buscar productos..."
+                          className="bg-transparent w-full text-sm font-body text-brand-black placeholder:text-neutral-400 outline-none"
+                        />
+                        {query && (
+                          <button
+                            onClick={() => setQuery("")}
+                            className="text-neutral-400 hover:text-neutral-600 shrink-0"
+                          >
+                            <X size={14} />
+                          </button>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Results */}
+                    <div className="max-h-[60vh] sm:max-h-80 overflow-y-auto">
+                      {query.trim() && filtered.length === 0 && (
+                        <div className="p-6 text-center">
+                          <p className="font-body text-sm text-neutral-400">
+                            No se encontraron productos para &quot;{query}&quot;
+                          </p>
+                        </div>
+                      )}
+
+                      {filtered.map((product) => (
+                        <button
+                          key={product.id}
+                          onClick={() => handleResultClick(product.slug)}
+                          className="w-full flex items-center gap-4 p-4 hover:bg-neutral-50 active:bg-neutral-100 transition-colors text-left"
+                        >
+                          <div className="relative w-14 h-14 rounded-lg overflow-hidden bg-neutral-100 shrink-0">
+                            <Image
+                              src={product.images[0]}
+                              alt={product.name}
+                              fill
+                              sizes="56px"
+                              className="object-cover"
+                            />
+                          </div>
+                          <div className="min-w-0">
+                            <p className="font-body text-sm font-semibold text-brand-black truncate">
+                              {product.name}
+                            </p>
+                            <p className="font-body text-sm font-bold text-brand-gold-500">
+                              RD${product.price.toLocaleString()}
+                            </p>
+                          </div>
+                        </button>
+                      ))}
+
+                      {!query.trim() && (
+                        <div className="p-6 text-center">
+                          <p className="font-body text-sm text-neutral-400">
+                            Escribe para buscar productos
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

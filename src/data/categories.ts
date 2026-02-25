@@ -7,16 +7,10 @@ export interface Category {
 
 export const categories: Category[] = [
   {
-    name: "Jeans",
-    slug: "jeans",
+    name: "Pantalones",
+    slug: "pantalones",
     description: "Cortes que resaltan tu figura",
     image: "/images/categories/jeans.jpg",
-  },
-  {
-    name: "Tops",
-    slug: "tops",
-    description: "Estilos unicos para cada ocasion",
-    image: "/images/categories/tops.jpg",
   },
   {
     name: "Conjuntos",
@@ -25,9 +19,15 @@ export const categories: Category[] = [
     image: "/images/categories/conjuntos.jpg",
   },
   {
-    name: "Lo Nuevo",
-    slug: "nuevo",
-    description: "Ultimas tendencias recien llegadas",
+    name: "Mo'ms",
+    slug: "moms",
+    description: "Estilo mom jean, comodo y moderno",
     image: "/images/categories/nuevo.jpg",
+  },
+  {
+    name: "Campanas",
+    slug: "campanas",
+    description: "Pierna ancha con estilo campana",
+    image: "/images/categories/tops.jpg",
   },
 ];

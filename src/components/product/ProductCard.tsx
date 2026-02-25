@@ -28,7 +28,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    window.open(buildWhatsAppUrl({ productName: product.name }), "_blank");
+    window.open(buildWhatsAppUrl({ productName: product.name, productSlug: product.slug }), "_blank");
   };
 
   return (

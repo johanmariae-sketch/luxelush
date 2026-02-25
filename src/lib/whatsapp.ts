@@ -2,6 +2,7 @@ import { BRAND } from "./constants";
 
 interface WhatsAppMessageOptions {
   productName?: string;
+  productSlug?: string;
   size?: string;
   customMessage?: string;
 }
@@ -10,11 +11,19 @@ export function buildWhatsAppUrl(options?: WhatsAppMessageOptions): string {
   let message = BRAND.whatsappDefaultMessage;
 
   if (options?.productName) {
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+    const productUrl = options.productSlug
+      ? `${baseUrl}/producto/${options.productSlug}`
+      : "";
+
     message = `Hola! Me interesa el producto: ${options.productName}`;
     if (options.size) {
       message += ` - Talla: ${options.size}`;
     }
-    message += ". Me gustaria hacer un pedido.";
+    if (productUrl) {
+      message += `\n${productUrl}`;
+    }
+    message += "\nMe gustaria hacer un pedido.";
   }
 
   if (options?.customMessage) {
