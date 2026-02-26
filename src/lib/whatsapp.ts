@@ -20,9 +20,6 @@ export function buildWhatsAppUrl(options?: WhatsAppMessageOptions): string {
     if (options.size) {
       message += ` - Talla: ${options.size}`;
     }
-    if (productUrl) {
-      message += `\n${productUrl}`;
-    }
     message += "\nMe gustaría hacer un pedido.";
   }
 
