@@ -7,7 +7,7 @@ export const BRAND = {
   whatsappNumber: "18096321220",
   whatsappDefaultMessage:
     "¡Hola! Me gustaría obtener más información sobre sus productos.",
-  instagram: "https://www.instagram.com/exitofashioncollectionusa/",
+  instagram: "https://www.instagram.com/luxelush.srl/",
   facebook: "https://facebook.com/luxelush",
   tiktok: "https://tiktok.com/@luxelush",
   email: "info@luxelush.com",
