@@ -103,15 +103,15 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
             {product.isOnSale && product.salePrice ? (
               <>
                 <span className="font-body text-sm font-bold text-brand-rose">
-                  RD${product.salePrice.toFixed(0)}
+                  RD${product.salePrice.toLocaleString()}
                 </span>
                 <span className="font-body text-xs text-neutral-400 line-through">
-                  RD${product.price.toFixed(0)}
+                  RD${product.price.toLocaleString()}
                 </span>
               </>
             ) : (
               <span className="font-body text-sm font-bold text-brand-black">
-                RD${product.price.toFixed(0)}
+                RD${product.price.toLocaleString()}
               </span>
             )}
           </div>
@@ -168,13 +168,10 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               </div>
             </motion.div>
 
-            {/* Product info below image */}
+            {/* Product name below image */}
             <div className="absolute bottom-6 left-0 right-0 text-center">
               <p className="font-body text-white text-sm font-semibold">
                 {product.name}
-              </p>
-              <p className="font-body text-brand-gold-500 text-sm font-bold">
-                RD${product.price.toLocaleString()}
               </p>
             </div>
           </motion.div>
