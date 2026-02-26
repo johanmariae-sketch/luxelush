@@ -77,7 +77,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="underline underline-offset-2 hover:text-brand-gold-300 transition-colors"
           >
-            Escribenos por WhatsApp
+            Escríbenos por WhatsApp
           </a>
         </p>
       </div>

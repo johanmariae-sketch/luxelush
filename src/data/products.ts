@@ -5,7 +5,7 @@ export const products: Product[] = [
   {
     id: "1",
     slug: "pantalon-skinny-negro-clasico",
-    name: "Pantalon Skinny Negro Clasico",
+    name: "Pantalón Skinny Negro Clásico",
     price: 1300,
     category: "pantalones",
     sizes: ["S", "M", "L", "XL"],
@@ -14,7 +14,7 @@ export const products: Product[] = [
   {
     id: "2",
     slug: "pantalon-skinny-celeste",
-    name: "Pantalon Skinny Celeste",
+    name: "Pantalón Skinny Celeste",
     price: 1300,
     category: "pantalones",
     sizes: ["S", "M", "L", "XL"],
@@ -23,7 +23,7 @@ export const products: Product[] = [
   {
     id: "3",
     slug: "pantalon-oscuro-clasico",
-    name: "Pantalon Oscuro Clasico",
+    name: "Pantalón Oscuro Clásico",
     price: 1300,
     category: "pantalones",
     sizes: ["S", "M", "L"],
@@ -32,7 +32,7 @@ export const products: Product[] = [
   {
     id: "4",
     slug: "pantalon-recto-azul",
-    name: "Pantalon Recto Azul",
+    name: "Pantalón Recto Azul",
     price: 1300,
     category: "pantalones",
     sizes: ["S", "M", "L", "XL"],
@@ -41,7 +41,7 @@ export const products: Product[] = [
   {
     id: "5",
     slug: "pantalon-negro-con-top-amarillo",
-    name: "Pantalon Negro con Top Amarillo",
+    name: "Pantalón Negro con Top Amarillo",
     price: 1300,
     category: "pantalones",
     sizes: ["S", "M", "L"],
@@ -50,7 +50,7 @@ export const products: Product[] = [
   {
     id: "6",
     slug: "pantalon-oscuro-con-blusa-blanca",
-    name: "Pantalon Oscuro con Blusa Blanca",
+    name: "Pantalón Oscuro con Blusa Blanca",
     price: 1300,
     category: "pantalones",
     sizes: ["S", "M", "L", "XL"],

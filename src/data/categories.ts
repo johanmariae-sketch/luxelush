@@ -21,7 +21,7 @@ export const categories: Category[] = [
   {
     name: "Mo'ms",
     slug: "moms",
-    description: "Estilo mom jean, comodo y moderno",
+    description: "Estilo mom jean, cómodo y moderno",
     image: "/images/categories/nuevo.jpg",
   },
   {

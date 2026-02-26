@@ -30,9 +30,9 @@ export default function CatalogoPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="font-accent text-xs font-bold uppercase tracking-[0.3em] text-brand-gold-500 mb-3">
-              Nuestra Coleccion
+              Nuestra Colección
             </p>
-            <h1 className="heading-lg">Catalogo</h1>
+            <h1 className="heading-lg">Catálogo</h1>
           </motion.div>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function CatalogoPage() {
           {/* Empty state */}
           {filtered.length === 0 && (
             <p className="text-center font-body text-neutral-400 py-20">
-              No hay productos en esta categoria aun.
+              No hay productos en esta categoría aún.
             </p>
           )}
         </div>

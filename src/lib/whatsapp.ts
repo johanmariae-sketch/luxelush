@@ -16,14 +16,14 @@ export function buildWhatsAppUrl(options?: WhatsAppMessageOptions): string {
       ? `${baseUrl}/producto/${options.productSlug}`
       : "";
 
-    message = `Hola! Me interesa el producto: ${options.productName}`;
+    message = `¡Hola! Me interesa el producto: ${options.productName}`;
     if (options.size) {
       message += ` - Talla: ${options.size}`;
     }
     if (productUrl) {
       message += `\n${productUrl}`;
     }
-    message += "\nMe gustaria hacer un pedido.";
+    message += "\nMe gustaría hacer un pedido.";
   }
 
   if (options?.customMessage) {

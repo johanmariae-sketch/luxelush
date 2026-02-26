@@ -19,7 +19,7 @@ export default function CategoryGrid() {
           <p className="font-accent text-xs font-bold uppercase tracking-[0.3em] text-brand-gold-500 mb-3">
             Colecciones
           </p>
-          <h2 className="heading-lg">Explora Nuestras Categorias</h2>
+          <h2 className="heading-lg">Explora Nuestras Categorías</h2>
         </motion.div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">

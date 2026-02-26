@@ -7,7 +7,7 @@ import { buildWhatsAppUrl } from "@/lib/whatsapp";
 const values = [
   {
     icon: Heart,
-    title: "Pasion por la Moda",
+    title: "Pasión por la Moda",
     description:
       "Seleccionamos cada prenda pensando en resaltar la belleza y confianza de nuestras clientas.",
   },
@@ -19,15 +19,15 @@ const values = [
   },
   {
     icon: Truck,
-    title: "Envio Rapido",
+    title: "Envío Rápido",
     description:
-      "Brindamos una experiencia de compra facil, rapida y confiable desde tu casa.",
+      "Brindamos una experiencia de compra fácil, rápida y confiable desde tu casa.",
   },
   {
     icon: ShieldCheck,
     title: "Compra Segura",
     description:
-      "Atencion personalizada por WhatsApp para que te sientas segura con tu pedido.",
+      "Atención personalizada por WhatsApp para que te sientas segura con tu pedido.",
   },
 ];
 
@@ -53,11 +53,11 @@ export default function NosotrosPage() {
             className="space-y-6"
           >
             <p className="font-accent text-xs font-bold uppercase tracking-[0.4em] text-brand-gold-500">
-              Quienes Somos
+              Quiénes Somos
             </p>
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-light text-white leading-tight">
               Moda Femenina con{" "}
-              <span className="text-brand-gold-500 italic">Proposito</span>
+              <span className="text-brand-gold-500 italic">Propósito</span>
             </h1>
             <div className="w-16 h-px bg-brand-gold-500 mx-auto" />
           </motion.div>
@@ -76,14 +76,14 @@ export default function NosotrosPage() {
           >
             <p className="font-heading text-2xl sm:text-3xl md:text-4xl font-light text-brand-black leading-relaxed">
               En <span className="text-brand-gold-500 italic">Luxelush</span>{" "}
-              ofrecemos ropa femenina moderna, comoda y de excelente calidad
+              ofrecemos ropa femenina moderna, cómoda y de excelente calidad
               para mujeres que quieren verse seguras y con estilo.
             </p>
             <div className="w-12 h-px bg-brand-gold-300 mx-auto" />
             <p className="font-body text-neutral-500 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
               Seleccionamos cada prenda pensando en resaltar la belleza y
               confianza de nuestras clientas, brindando una experiencia de
-              compra facil, rapida y confiable.
+              compra fácil, rápida y confiable.
             </p>
           </motion.div>
         </div>
@@ -102,7 +102,7 @@ export default function NosotrosPage() {
             <p className="font-accent text-xs font-bold uppercase tracking-[0.3em] text-brand-gold-500 mb-3">
               Nuestros Valores
             </p>
-            <h2 className="heading-lg">Por Que Elegirnos</h2>
+            <h2 className="heading-lg">Por Qué Elegirnos</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -144,24 +144,24 @@ export default function NosotrosPage() {
             className="space-y-6"
           >
             <h2 className="heading-md">
-              Lista para descubrir tu{" "}
+              ¿Lista para descubrir tu{" "}
               <span className="text-brand-gold-500 italic">nuevo estilo</span>?
             </h2>
             <p className="font-body text-neutral-500">
-              Escribenos por WhatsApp y te ayudamos a encontrar la prenda
+              Escríbenos por WhatsApp y te ayudamos a encontrar la prenda
               perfecta para ti.
             </p>
             <div className="pt-2">
               <a
                 href={buildWhatsAppUrl({
                   customMessage:
-                    "Hola! Me gustaria conocer mas sobre sus productos.",
+                    "¡Hola! Me gustaría conocer más sobre sus productos.",
                 })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-block"
               >
-                Contactanos
+                Contáctanos
               </a>
             </div>
           </motion.div>

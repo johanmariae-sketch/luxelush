@@ -25,21 +25,21 @@ export default function PromoBanner() {
           className="space-y-6"
         >
           <p className="font-accent text-xs font-bold uppercase tracking-[0.4em] text-brand-gold-500">
-            Coleccion Exclusiva
+            Colección Exclusiva
           </p>
           <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-light text-white leading-tight">
             Tu Estilo,<br />
             <span className="text-brand-gold-500 italic">Tu Confianza</span>
           </h2>
           <p className="text-neutral-400 font-body text-base sm:text-lg max-w-xl mx-auto">
-            Piezas disenadas para mujeres que marcan tendencia.
+            Piezas diseñadas para mujeres que marcan tendencia.
             Haz tu pedido directo por WhatsApp.
           </p>
           <div className="pt-4">
             <a
               href={buildWhatsAppUrl({
                 customMessage:
-                  "Hola! Estoy interesada en la coleccion exclusiva. Me gustaria ver las opciones disponibles.",
+                  "¡Hola! Estoy interesada en la colección exclusiva. Me gustaría ver las opciones disponibles.",
               })}
               target="_blank"
               rel="noopener noreferrer"

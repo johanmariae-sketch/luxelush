@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Navigation Column */}
           <div className="space-y-4">
             <h4 className="font-accent text-xs font-bold uppercase tracking-[0.2em] text-brand-gold-500">
-              Navegacion
+              Navegación
             </h4>
             <nav className="flex flex-col gap-3">
               {NAV_LINKS.map((link) => (
@@ -99,7 +99,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {BRAND.fullName}. Todos los derechos reservados.
           </p>
           <p className="text-neutral-600 text-xs font-body">
-            Disenado con pasion
+            Diseñado con pasión
           </p>
         </div>
       </div>

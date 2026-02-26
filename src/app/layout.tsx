@@ -29,12 +29,12 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "LuxeLush SRL — Moda Femenina con Estilo",
   description:
-    "Descubre la ultima coleccion de moda femenina en LuxeLush. Jeans, tops, conjuntos y mas. Pedidos por WhatsApp.",
+    "Descubre la última colección de moda femenina en LuxeLush. Jeans, tops, conjuntos y más. Pedidos por WhatsApp.",
   keywords: ["moda femenina", "ropa de mujer", "jeans", "tops", "luxelush"],
   openGraph: {
     title: "LuxeLush SRL — Moda Femenina con Estilo",
     description:
-      "Descubre la ultima coleccion de moda femenina en LuxeLush.",
+      "Descubre la última colección de moda femenina en LuxeLush.",
     type: "website",
     locale: "es_LA",
   },

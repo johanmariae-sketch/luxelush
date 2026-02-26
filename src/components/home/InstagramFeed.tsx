@@ -26,9 +26,9 @@ export default function InstagramFeed() {
           className="text-center mb-12"
         >
           <p className="font-accent text-xs font-bold uppercase tracking-[0.3em] text-brand-gold-500 mb-3">
-            Siguenos
+            Síguenos
           </p>
-          <h2 className="heading-lg mb-4">@luxelush</h2>
+          <h2 className="heading-lg mb-4">@exitofashioncollectionusa</h2>
           <a
             href={BRAND.instagram}
             target="_blank"
