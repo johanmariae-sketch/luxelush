@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram, Facebook, Mail } from "lucide-react";
+import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
 import { BRAND, NAV_LINKS } from "@/lib/constants";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -87,6 +87,40 @@ export default function Footer() {
               <p className="text-neutral-400 font-body text-sm">
                 {BRAND.email}
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Location Section */}
+      <div className="border-t border-neutral-800">
+        <div className="max-w-7xl mx-auto section-padding py-12">
+          <div className="flex flex-col items-center gap-6">
+            <div className="flex items-center gap-2">
+              <MapPin size={18} className="text-brand-gold-500" />
+              <h4 className="font-accent text-xs font-bold uppercase tracking-[0.2em] text-brand-gold-500">
+                Ubicación
+              </h4>
+            </div>
+            <a
+              href={BRAND.location.googleMapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-400 hover:text-white font-body text-sm transition-colors"
+            >
+              {BRAND.location.address}
+            </a>
+            <div className="w-full max-w-3xl aspect-video rounded-lg overflow-hidden">
+              <iframe
+                src={BRAND.location.mapUrl}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicación de LuxeLush"
+              />
             </div>
           </div>
         </div>
