@@ -14,7 +14,7 @@ export const BRAND = {
   location: {
     address: "Santo Domingo, República Dominicana",
     mapUrl:
-      "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1500!2d-69.939683!3d18.503583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sdo",
+      "https://maps.google.com/maps?q=18.503583,-69.939683&z=17&output=embed",
     googleMapsLink: "https://maps.app.goo.gl/S87zpLvvUXz17d9u5",
   },
 };

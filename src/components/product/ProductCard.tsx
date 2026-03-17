@@ -115,8 +115,8 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               </span>
             )}
           </div>
-          <div className="flex gap-1 pt-1">
-            {product.sizes.slice(0, 4).map((size) => (
+          <div className="flex flex-wrap gap-1 pt-1">
+            {product.sizes.map((size) => (
               <span
                 key={size}
                 className="text-[10px] font-body text-neutral-400 border border-neutral-200 px-1.5 py-0.5 rounded"
