@@ -6,10 +6,10 @@ import Link from "next/link";
 import { BRAND } from "@/lib/constants";
 
 const heroImages = [
-  { src: "/images/products/hero-1.jpg", alt: "Modelo con jeans", rotate: -3 },
-  { src: "/images/products/hero-2.jpg", alt: "Modelo con top", rotate: 1 },
-  { src: "/images/products/hero-3.jpg", alt: "Modelo con conjunto", rotate: -2 },
-  { src: "/images/products/hero-4.jpg", alt: "Modelo streetwear", rotate: 3 },
+  { src: "/images/products/levanta-cola-2.jpg", alt: "Levanta Cola Skinny", rotate: -3 },
+  { src: "/images/products/set-conjunto-1.jpg", alt: "Set Conjunto Deportivo", rotate: 1 },
+  { src: "/images/products/mom-jeans-3.jpg", alt: "Mom's Jean Celeste", rotate: -2 },
+  { src: "/images/products/campana-2.jpg", alt: "Campana con Bordado", rotate: 3 },
 ];
 
 export default function HeroBanner() {
